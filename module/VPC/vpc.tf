@@ -7,14 +7,6 @@ resource "aws_vpc" "main" {
     }
 }
 
-resource "aws_internet_gateway" "igw" {
-    vpc_id = aws_vpc.main.id
-
-    tags = {
-        Name = var.main_vpc_tag_name
-    }
-}
-
 resource "aws_subnet" "public_subnets" {
     vpc_id     = aws_vpc.main.id
     cidr_block = var.public_subnets_cidr

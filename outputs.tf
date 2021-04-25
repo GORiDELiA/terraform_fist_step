@@ -1,11 +1,7 @@
-output "exam_root" {
-  value = "AAA"
-}
-
-output "exam_module_VPC" {
-  value = module.VPC.exam
-}
-
 output "exam_subnets_id" {
   value = module.VPC.subnets_id
+}
+
+output "nat_gateway_private_ip" {
+  value = module.VPC.nat_gateway_private_ip
 }
