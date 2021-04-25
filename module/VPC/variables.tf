@@ -17,3 +17,6 @@ variable "private_subnets_tag_name" {
     default = "PRIVATE SUBNET"
 }
 
+variable "private_route_table_name" {
+  default = "PRIVATE ROUTE TABLE"
+}
