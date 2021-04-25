@@ -22,10 +22,12 @@ module "VPC" {
   public_subnets_tag_name  = var.public_subnets_tag_name
   private_subnets_cidr     = var.private_subnets_cidr
   private_subnets_tag_name = var.private_subnets_tag_name
-
+  private_route_table_name = var.private_route_table_name
 }
 
 module "EC2" {
   source = "./module/EC2"
   subnet_ids = "${module.VPC.subnets_id}"
 }
+
+

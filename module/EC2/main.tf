@@ -9,7 +9,8 @@ data "aws_ami" "amazon_linux_2" {
   }
 }
 
-resource "aws_instance" "AppServer01" {
+
+resource "aws_instance" "AppServer" {
     ami           = data.aws_ami.amazon_linux_2.id
     instance_type = "t2.micro"
     subnet_id = var.subnet_ids

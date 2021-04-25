@@ -1,4 +1,4 @@
-resource "aws_route_table" "private_subnets_route" {
+resource "aws_route_table" "private_subnets_route_table" {
     vpc_id = aws_vpc.main.id
 
     route {
@@ -12,5 +12,5 @@ resource "aws_route_table" "private_subnets_route" {
 
 resource "aws_route_table_association" "private_association" {
     subnet_id      = aws_subnet.private_subnets.id
-    route_table_id = aws_route_table.private_subnets_route.id
+    route_table_id = aws_route_table.private_subnets_route_table.id
 }
