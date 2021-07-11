@@ -33,7 +33,9 @@ module "VPC" {
 
 module "EC2" {
   source     = "./module/EC2"
-  subnet_ids = module.VPC.subnets_id
+  subnet_ids = module.VPC.private_subnets_id
+
 }
+
 
 
