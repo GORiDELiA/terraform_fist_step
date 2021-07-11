@@ -10,20 +10,11 @@ data "aws_ami" "amazon_linux_2" {
 }
 
 
-resource "aws_instance" "PRIVATE_SERVER" {
+resource "aws_instance" "EC2" {
     ami           = data.aws_ami.amazon_linux_2.id
     instance_type = "t2.micro"
     subnet_id = var.subnet_ids
     tags = {
-        Name = var.private_ec2_tag_name
-    }
-}
-
-resource "aws_instance" "PUBLIC_SERVER" {
-    ami           = data.aws_ami.amazon_linux_2.id
-    instance_type = "t2.micro"
-    subnet_id = var.subnet_ids
-    tags = {
-        Name = var.public_ec2_tag_name
+        Name = var.ec2_tag_name
     }
 }
